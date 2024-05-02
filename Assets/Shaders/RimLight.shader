@@ -4,7 +4,7 @@ Shader "Custom/RimLight"
     {
         _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-       [HDR] _RimColor("RIm Color", color) = (1,1,1,1) //Bloom¿Ã ¿Ãª⁄∞‘ ∏‘¿Ω
+       [HDR] _RimColor("RIm Color", color) = (1,1,1,1)
         _RimPower("Rim Power", float) = 1
      
     }

@@ -62,8 +62,8 @@ Shader "Custom/Water"
 
             //Rim
             float rim = saturate(dot(o.Normal, IN.viewDir));
-            float rim1 = pow(1-rim, 100); //±â¿ï¾îÁö¸é ¹à¾ÆÁü
-            float rim2 = pow(1-rim, 2); //ÇÁ·¹³Ú ¸¶½ºÅ·¿ë(¾ËÆÄ)
+            float rim1 = pow(1-rim, 100);
+            float rim2 = pow(1-rim, 2);
 
             float4 ref = texCUBE(_Cube, WorldReflectionVector(IN, o.Normal));
 
@@ -74,9 +74,9 @@ Shader "Custom/Water"
         float4 Lightingwater(SurfaceOutput s, float3 lightDir, float3 viewDir, float atten)
         {
             //Specular
-            float3 H = normalize(lightDir + viewDir); // ÇÏÇÁº¤ÅÍ
-            float spec = saturate(dot(s.Normal, H)); //½ºÆåÅ§·¯ °ø½Ä
-            spec = pow (spec, 1050)*10; //½ºÆåÅ§·¯ ¹üÀ§¿Í ºí·ë
+            float3 H = normalize(lightDir + viewDir);
+            float spec = saturate(dot(s.Normal, H));
+            spec = pow (spec, 1050)*10;
 
             float4 final;
             final.rgb = spec * _LightColor0;
